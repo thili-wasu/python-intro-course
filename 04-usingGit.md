@@ -1,3 +1,7 @@
+# To render this markdown file
+Right click within the open markdown text editor area and you should get a menu option "Show markdown preview". 
+Select that and it will render the text into markdown in another window (side by side by default).
+
 
 # Quick overview of Git
 Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. 
