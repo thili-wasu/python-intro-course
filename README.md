@@ -1,3 +1,4 @@
+![logo](Data/logo.png)
 # python-intro-course
 
 This repository counts 6 notebooks. I try to introduce the basics of python programing.
