@@ -1,0 +1,33 @@
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 5.2.15(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+/var/lib/slurm/slurmd/job00334/slurm_script: line 10: cd: SLURM_SUBMIT_DIR: No such file or directory
+
+ Starting FDS ...
+
+ MPI Process      0 started on andromeda
+
+ Reading FDS input file ...
+
+
+ERROR(101): Problem with DUMP line. (CHID: Steckler)
+
+ERROR: FDS was improperly set-up - FDS stopped (CHID: Steckler)

@@ -1,0 +1,75 @@
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 5.2.15(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+/var/lib/slurm/slurmd/job00331/slurm_script: line 10: cd: SLURM_SUBMIT_DIR: No such file or directory
+
+ Starting FDS ...
+
+ MPI Process      0 started on andromeda
+
+ Reading FDS input file ...
+
+
+ Fire Dynamics Simulator
+
+ Current Date     : August  3, 2024  12:57:07
+ Revision         : FDS-6.9.1-241-geb36e1e-master
+ Revision Date    : Thu May 16 17:19:36 2024 -0400
+ Compiler         : Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2024.1.2 Build 20240508
+ Compilation Date : may 27, 2024 14:47:47
+
+ Number of MPI Processes:  1
+ Number of OpenMP Threads: 1
+
+ MPI version: 3.1
+ MPI library version: Intel(R) MPI Library 2021.12 for Linux* OS
+
+
+ Job TITLE        : Steckler Compartment
+ Job ID string    : Steckler
+
+ Time Step:       1, Scaled Simulation Time:      1.08 s
+ Time Step:       2, Scaled Simulation Time:      2.16 s
+ Time Step:       3, Scaled Simulation Time:      2.58 s
+ Time Step:       4, Scaled Simulation Time:      3.03 s
+ Time Step:       5, Scaled Simulation Time:      3.53 s
+ Time Step:       6, Scaled Simulation Time:      4.08 s
+ Time Step:       7, Scaled Simulation Time:      4.69 s
+ Time Step:       8, Scaled Simulation Time:      5.17 s
+ Time Step:       9, Scaled Simulation Time:      5.56 s
+ Time Step:      10, Scaled Simulation Time:      5.89 s
+ Time Step:      20, Scaled Simulation Time:      8.07 s
+ Time Step:      30, Scaled Simulation Time:      9.52 s
+ Time Step:      40, Scaled Simulation Time:     10.78 s
+ Time Step:      50, Scaled Simulation Time:     11.96 s
+ Time Step:      60, Scaled Simulation Time:     13.09 s
+ Time Step:      70, Scaled Simulation Time:     14.34 s
+ Time Step:      80, Scaled Simulation Time:     15.62 s
+ Time Step:      90, Scaled Simulation Time:     17.20 s
+ Time Step:     100, Scaled Simulation Time:     18.80 s
+ Time Step:     200, Scaled Simulation Time:     35.46 s
+ Time Step:     300, Scaled Simulation Time:     50.59 s
+ Time Step:     400, Scaled Simulation Time:     65.54 s
+ Time Step:     500, Scaled Simulation Time:     80.89 s
+ Time Step:     600, Scaled Simulation Time:     96.69 s
+ Time Step:     622, Scaled Simulation Time:    100.00 s
+
+STOP: FDS completed successfully (CHID: Steckler)
