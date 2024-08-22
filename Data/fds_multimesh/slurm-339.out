@@ -1,0 +1,93 @@
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 5.2.15(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+/var/lib/slurm/slurmd/job00339/slurm_script: line 10: cd: SLURM_SUBMIT_DIR: No such file or directory
+
+ Starting FDS ...
+
+ MPI Process      0 started on andromeda
+ MPI Process      2 started on andromeda
+ MPI Process      1 started on andromeda
+ MPI Process      3 started on andromeda
+
+ Reading FDS input file ...
+
+
+ Fire Dynamics Simulator
+
+ Current Date     : August  3, 2024  17:59:36
+ Revision         : FDS-6.9.1-241-geb36e1e-master
+ Revision Date    : Thu May 16 17:19:36 2024 -0400
+ Compiler         : Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2024.1.2 Build 20240508
+ Compilation Date : may 27, 2024 14:47:47
+
+ Number of MPI Processes:  4
+ Number of OpenMP Threads: 1
+
+ MPI version: 3.1
+ MPI library version: Intel(R) MPI Library 2021.12 for Linux* OS
+
+
+ Job TITLE        : 
+ Job ID string    : fdsreader_slcfs
+
+ Time Step:       1, Simulation Time:      0.16 s
+ Time Step:       2, Simulation Time:      0.32 s
+ Time Step:       3, Simulation Time:      0.48 s
+ Time Step:       4, Simulation Time:      0.64 s
+ Time Step:       5, Simulation Time:      0.80 s
+ Time Step:       6, Simulation Time:      0.96 s
+ Time Step:       7, Simulation Time:      1.12 s
+ Time Step:       8, Simulation Time:      1.28 s
+ Time Step:       9, Simulation Time:      1.44 s
+ Time Step:      10, Simulation Time:      1.60 s
+ Time Step:      20, Simulation Time:      3.00 s
+ Time Step:      30, Simulation Time:      4.06 s
+ Time Step:      40, Simulation Time:      5.06 s
+ Time Step:      50, Simulation Time:      6.05 s
+ Time Step:      60, Simulation Time:      7.00 s
+ Time Step:      70, Simulation Time:      7.89 s
+ Time Step:      80, Simulation Time:      8.74 s
+ Time Step:      90, Simulation Time:      9.54 s
+ Time Step:     100, Simulation Time:     10.34 s
+ Time Step:     200, Simulation Time:     17.37 s
+ Time Step:     300, Simulation Time:     23.42 s
+ Time Step:     400, Simulation Time:     28.66 s
+ Time Step:     500, Simulation Time:     33.78 s
+ Time Step:     600, Simulation Time:     38.88 s
+ Time Step:     700, Simulation Time:     43.96 s
+ Time Step:     800, Simulation Time:     49.30 s
+ Time Step:     900, Simulation Time:     54.37 s
+ Time Step:    1000, Simulation Time:     59.40 s
+ Time Step:    1100, Simulation Time:     64.64 s
+ Time Step:    1200, Simulation Time:     69.93 s
+ Time Step:    1300, Simulation Time:     75.26 s
+ Time Step:    1400, Simulation Time:     80.35 s
+ Time Step:    1500, Simulation Time:     85.38 s
+ Time Step:    1600, Simulation Time:     90.48 s
+ Time Step:    1700, Simulation Time:     95.65 s
+ Time Step:    1800, Simulation Time:    100.70 s
+ Time Step:    1900, Simulation Time:    105.93 s
+ Time Step:    2000, Simulation Time:    111.24 s
+ Time Step:    2100, Simulation Time:    116.42 s
+ Time Step:    2170, Simulation Time:    120.00 s
+
+STOP: FDS completed successfully (CHID: fdsreader_slcfs)
