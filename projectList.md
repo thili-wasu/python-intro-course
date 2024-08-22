@@ -93,7 +93,7 @@ The objective is to see how much the ambient condition on the day of the fire we
 
 **tasks:** a non-exhaustive list of tasks to perform:
 - read FDS simulation using `fdsreader`. see [06-fdsreader.ipynb](./06-fdsreader.ipynb) for example of how to use `fdsreader`.
-- From the device file data (see device `ID='x'` and `ID='D'`), compute fire behavior metrics such like ROS, flame depth, and residence time along the center line of the ellipse. Compare with results from the [validation guide](./Data/FDS_Validation_Guide.pdf) page 1102-1103 or original publication ([Mell et al 2007](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=861373)).
+- From the device file data (see device `ID='x'` and `ID='D'`), compute fire behavior metrics such like ROS, flame depth, and residence time along the center line of the ellipse. Compare with results from the [validation guide](https://github.com/firemodels/fds/releases/download/FDS-6.9.1/FDS_Validation_Guide.pdf) page 1102-1103.
 - Using slice of `HRRPUV` available a `dt=5s`, develop an algorithm to compute 2D map of arrival time. In this map, each pixel mark the time of arrival of the fire front as observed in the slice file. To get a continuous map you need to interpolate between available points (see `scipy` function [griddata](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) ).
 - From the arrival time map, compute ROS.
 - perform the 1D and 2D ROS calculation above for the 3 simulations.
