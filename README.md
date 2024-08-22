@@ -4,7 +4,7 @@
 This repository counts 6 notebooks. I try to introduce the basics of python programming.
 
 * [`00-gettingStarted.ipynb`](./00-gettingStarted.ipynb): this first notebook show you how to setup your python environement.
-* [01-basic.ipynb](01-basic.ipynb) deals with the basics. It shows the different variable types and the use of library as well as their installation.
+* [`01-basic.ipynb`](01-basic.ipynb) deals with the basics. It shows the different variable types and the use of library as well as their installation.
 * [`02-functionAndClass.ipynb`](02-functionAndClass.ipynb): this is a quick overview of function and class definition.
 * [`03-simpleDebugging.ipynb`](03-simpleDebugging.ipynb): here is a very simple example to get introduced to debugging.
 * [`04-usingGit.md`](04-usingGit.md): this fire is a text file that introduces you to the basic command of git, to start using version control system.
