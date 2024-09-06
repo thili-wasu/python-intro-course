@@ -20,12 +20,13 @@ The deliverables are:
 
 ## 2. **Project Description**
 
-
 ## 2.1. Compare atmospheric data simulated with different atmospheric model resolution 
 **objectives:**
 The objective of this project is to compare atmospheric data from 3 run of the atmospheric model [MESONH](http://mesonh.aero.obs-mip.fr/mesonh57) run at 3 different resolutions: M1 (2km), M2(400m), M3(80m). The 3 models come from the same two-way nested simulation. A two-way nested simulation involves simulation models that interact with each other, allowing information to flow in both directions. This is common in atmospheric models where different scales or processes are interdependent, and each model can influence the other. Here the three model are nested with a focus on the area around el Pont de Vilomara.
-![pgd](Data/pgds.png)
-We want to observe the differences between the models on variable such as: wind at 10m, wind gust at 10m, temperature at 2m, relative humidity at 2m, or boundary layer height.  
+![pgd](Data/pgds.png)  
+We want: 
+- to observe the differences between the models on variable such as: wind at 10m, wind gust at 10m, temperature at 2m, relative humidity at 2m, or boundary layer height.  
+- And compare to weather station data near the location of the fire (see [Castellnou de Bages](https://www.meteo.cat/observacions/xema/dades?codi=U4&dia=2022-07-17T00:00Z)). 
 
 **tasks:** a non-exhaustive list of task to perform:
 - read raster data from the MESONH netcdf output files
@@ -33,11 +34,12 @@ We want to observe the differences between the models on variable such as: wind 
 - perform comparison between M1, M2 and M3 ambient condition on the burn area.
     - highlight the gain of higher resolution model on wind data.
     - show difference in variance and diurnal variation.  
-
+- perform comparison between M3 and data from the weather station located in Castellnou de Bages.
+  
 **data** are available on andromeda at:
 - MesoNH files: `/data/IMFSE/PythonCourse/MNH/`
 - burn area: `/data/IMFSE/PythonCourse/PontdeVilomara/burntArea/`
-
+- weather station data in Castellnou de Bages: [here](https://www.meteo.cat/observacions/xema/dades?codi=U4&dia=2022-07-17T00:00Z) as reported in page 2 of the fire report. A csv file with this data copiedpasted is here `/data/IMFSE/PythonCourse/PontdeVilomara/weatherStation_CastellouDeBages.csv` It also include the location of the weather station.
 
 ## 2.2. Evaluate the ambient condition scenario anomaly
 **objectives** 
@@ -63,16 +65,17 @@ The objective is to see how much the ambient condition on the day of the fire we
 - CERRA files: `/data/paugam/CDS/CERRA`. see .py file in directory for example f how to load CERRA data.
 
 
-## 2.3. Vegetation Map Analysis
+## 2.3. Vegetation and Terrain Map Analysis
 **objectives** The objectives are to compare atmospheric data, cover map/topography use in the atmospheric model, and fuel/topography map data used in fire model. In particular, we are interested in plotting covariance matrix to observe variables dependence.
 ![M3 fuel Model](Data/fuelModel_M3.png)
 
 **tasks:** a non-exhaustive list of tasks to perform:
-- read atmospheric data (wind, temperature, relative humidity) from M3 model
-- read cover map used in MESONH. you need to concatenate all coverXXX variable from the PGDM3.nc file in one map. The cover map are from the ecoclimap dataset (see [here](https://www.umr-cnrm.fr/surfex/spip.php?article219
+- in MesoMNH files:
+    - read atmospheric data (wind, temperature, relative humidity) from M3 model
+    - read cover map used in MESONH. you need to concatenate all coverXXX variable from the PGDM3.nc file in one map. The cover map are from the ecoclimap dataset (see [here](https://www.umr-cnrm.fr/surfex/spip.php?article219
 ) for the list of the cover map). 
-- read topography and compute slope
-- read fuel model map that will be used in fire model. The map are available in LCP tif file.
+    - read topography and compute aspect and slope. use topography from both the MesoNH file (srtm 250m) and the high resolution 30m srtm file (see data section below for where to find the data).
+- read data that will be used in fire model. The map are available in LCP tif file, see data section below.
 - resample LCP data to MESONH grid using [rasterio.warp.reproject](https://rasterio.readthedocs.io/en/stable/api/rasterio.warp.html#rasterio.warp.reproject), see example in [05a-GIS-rasterio.ipynb](05a-GIS-rasterio.ipynb)
 - mask the burn area
 - output in a geopandas data frame for all pixel in the burn area:
@@ -84,12 +87,14 @@ The objective is to see how much the ambient condition on the day of the fire we
 
 **data** are available on andromeda at:
 - MesoNH files: `/data/IMFSE/PythonCourse/MNH/`
+- topography: `/data/IMFSE/PythonCourse/LCP/srtm30m_pdV.tif` is a high resolution (30m) terrain map for the same zone as in the MesoNH files. The MesoNH terrain information input are based on the 250m product from [SRTM](https://www.earthdata.nasa.gov/sensors/srtm).
 - burn area: `/data/IMFSE/PythonCourse/PontdeVilomara/burntArea/`
 - LCP data: `/data/IMFSE/PythonCourse/LCP/lcp_pgd80.tif` see `.py` file in same directory to load `lcp_pgd80.tif`
 
 
 ## 2.4. Postprocessing of CSIRO C064 simulation
 **objectives:** the objectives are to load fds device and slice files to run analysis directly in python. 3 simulation are available on andromeda, see data section below.
+![c064FDS](Data/C064FDS.png)
 
 **tasks:** a non-exhaustive list of tasks to perform:
 - read FDS simulation using `fdsreader`. see [06-fdsreader.ipynb](./06-fdsreader.ipynb) for example of how to use `fdsreader`.
