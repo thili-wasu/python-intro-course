@@ -20,7 +20,7 @@ The deliverables are:
 
 ## 2. **Project Description**
 
-## 2.1. Compare atmospheric data simulated with different atmospheric model resolution 
+## 2.1. Compare atmospheric data simulated with different atmospheric model resolution [2 persons]
 **objectives:**
 The objective of this project is to compare atmospheric data from 3 run of the atmospheric model [MESONH](http://mesonh.aero.obs-mip.fr/mesonh57) run at 3 different resolutions: M1 (2km), M2(400m), M3(80m). The 3 models come from the same two-way nested simulation. A two-way nested simulation involves simulation models that interact with each other, allowing information to flow in both directions. This is common in atmospheric models where different scales or processes are interdependent, and each model can influence the other. Here the three model are nested with a focus on the area around el Pont de Vilomara.
 ![pgd](Data/pgds.png)  
@@ -41,7 +41,7 @@ We want:
 - burn area: `/data/IMFSE/PythonCourse/PontdeVilomara/burntArea/`
 - weather station data in Castellnou de Bages: [here](https://www.meteo.cat/observacions/xema/dades?codi=U4&dia=2022-07-17T00:00Z) as reported in page 2 of the fire report. A csv file with this data copiedpasted is here `/data/IMFSE/PythonCourse/PontdeVilomara/weatherStation_CastellouDeBages.csv` It also include the location of the weather station.
 
-## 2.2. Evaluate the ambient condition scenario anomaly
+## 2.2. Evaluate the ambient condition scenario anomaly [3 persons]
 **objectives** 
 The objectives are to compare high resolution simulated atmospheric data of the 16 and 17th of July 2022 from MesoNH (see project 1) against 21 years of Reanalysis data spanning from 2000 to 2021.  
 The Copernicus European Regional ReAnalysis ([CERRA](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.622a565a?tab=overview)) was uploaded on andromeda, see data section below for location. 4 variables are available every 6h at 5.5km resolution for all europe:
@@ -49,7 +49,8 @@ The Copernicus European Regional ReAnalysis ([CERRA](https://cds.climate.coperni
 - `si10`': 10m wind speed, 
 - `r2`   : relative humidity at 2m
 - `t2m` : temperature at 2m.
-![t2m example](Data/example_t2m_2021-06-25-1200.png)
+
+![t2m example](Data/example_t2m_2021-06-25-1200.png)  
 The objective is to see how much the ambient condition on the day of the fire were exceptional.
 
 **tasks**: a non-exhaustive list of tasks to perform:
@@ -65,8 +66,8 @@ The objective is to see how much the ambient condition on the day of the fire we
 - CERRA files: `/data/paugam/CDS/CERRA`. see .py file in directory for example f how to load CERRA data.
 
 
-## 2.3. Vegetation and Terrain Map Analysis
-**objectives** The objectives are to compare atmospheric data, cover map/topography use in the atmospheric model, and fuel/topography map data used in fire model. In particular, we are interested in plotting covariance matrix to observe variables dependence.
+## 2.3. Vegetation and Terrain Map Analysis [3 persons]
+**objectives** The objectives are to compare atmospheric data, cover map/topography use in the atmospheric model, and fuel/topography map data used in fire model. In particular, we are interested in plotting covariance matrix to observe variables dependence.  
 ![M3 fuel Model](Data/fuelModel_M3.png)
 
 **tasks:** a non-exhaustive list of tasks to perform:
@@ -92,13 +93,13 @@ The objective is to see how much the ambient condition on the day of the fire we
 - LCP data: `/data/IMFSE/PythonCourse/LCP/lcp_pgd80.tif` see `.py` file in same directory to load `lcp_pgd80.tif`
 
 
-## 2.4. Postprocessing of CSIRO C064 simulation
-**objectives:** the objectives are to load fds device and slice files to run analysis directly in python. 3 simulation are available on andromeda, see data section below.
-![c064FDS](Data/C064FDS.png)
+## 2.4. Postprocessing of CSIRO C064 simulation [2 persons]
+**objectives:** the objectives are to load fds device and slice files to run analysis directly in python. 3 simulation are available on andromeda, see data section below.  
+![c064FDS](Data/C064FDS.png)  
 
 **tasks:** a non-exhaustive list of tasks to perform:
 - read FDS simulation using `fdsreader`. see [06-fdsreader.ipynb](./06-fdsreader.ipynb) for example of how to use `fdsreader`.
-- From the device file data (see device `ID='x'` and `ID='D'`), compute fire behavior metrics such like ROS, flame depth, and residence time along the center line of the ellipse. Compare with results from the [validation guide](https://github.com/firemodels/fds/releases/download/FDS-6.9.1/FDS_Validation_Guide.pdf) page 1102-1103.
+- From the device data (see device `ID='x'` and `ID='D'`), compute the velocity of the flame front, or as we will see later in the fire behavior course the  Rate Of Spread (ROS) along the center line of the front. Compare with results from the [validation guide](https://github.com/firemodels/fds/releases/download/FDS-6.9.1/FDS_Validation_Guide.pdf) page 1102-1103.
 - Using slice of `HRRPUV` available a `dt=5s`, develop an algorithm to compute 2D map of arrival time. In this map, each pixel mark the time of arrival of the fire front as observed in the slice file. To get a continuous map you need to interpolate between available points (see `scipy` function [griddata](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) ).
 - From the arrival time map, compute ROS.
 - perform the 1D and 2D ROS calculation above for the 3 simulations.
