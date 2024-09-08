@@ -16,7 +16,7 @@ When developing your python code, keep in mind to use functions and classes when
 
 The deliverables are:
 1. the code that will be shared in a git repository (see [04-usingGit.md](./04-usingGit.md))
-2. a Short PDF document with the link to the git repository and sections highlighting answer to question listed in the tasks of the project description.   
+2. a Short presentation that you could base on a notebook to show the main output of your code (ie answer to questions listed in the tasks section of the project description). Build your presentation on the figure that will be displayed in the notebook and when interesting highlight some specs of your code. A task request will be open en `atenea` where you could give the link to your notebook.   
 
 ## 2. **Project Description**
 
